@@ -18,9 +18,12 @@
             background-color: #121212;
             color: #e0e0e0;
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         /* Header */
@@ -29,30 +32,30 @@
             color: #4CAF50;
             padding: 2rem 0;
             text-align: center;
-            flex-shrink: 0;
+            border-bottom: 2px solid #4CAF50;
+            grid-row: 1;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         /* Navigation */
         nav {
             text-align: center;
             margin: 1rem 0;
-            flex-shrink: 0;
         }
 
         nav a {
             color: #4CAF50;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
+            margin: 0 20px;
+            font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
@@ -62,18 +65,22 @@
 
         /* Main Content */
         main {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-rows: repeat(auto-fit, minmax(100px, auto));
+            grid-row-gap: 2rem;
+            justify-items: center;
             align-items: center;
-            text-align: center;
+            grid-row: 2;
         }
 
         section {
-            margin-bottom: 2rem;
-            max-width: 800px;
+            max-width: 900px;
+            text-align: center;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         section h2 {
@@ -85,8 +92,8 @@
         }
 
         section p, li {
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         ul {
@@ -101,7 +108,7 @@
         }
 
         article h3 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #81C784;
             margin-bottom: 0.5rem;
         }
@@ -118,7 +125,7 @@
             text-align: center;
             padding: 1rem 0;
             border-top: 2px solid #4CAF50;
-            flex-shrink: 0;
+            grid-row: 3;
         }
 
         footer p {
@@ -126,13 +133,20 @@
             font-size: 0.9rem;
         }
 
-        /* Hover Effects */
-        a, li {
-            transition: all 0.3s ease;
-        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
 
-        a:hover, li:hover {
-            color: #81C784;
+            nav a {
+                font-size: 1rem;
+                margin: 0 10px;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
