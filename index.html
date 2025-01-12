@@ -18,6 +18,9 @@
             background-color: #121212;
             color: #e0e0e0;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Header */
@@ -26,7 +29,7 @@
             color: #4CAF50;
             padding: 2rem 0;
             text-align: center;
-            border-bottom: 2px solid #4CAF50;
+            flex-shrink: 0;
         }
 
         header h1 {
@@ -42,6 +45,7 @@
         nav {
             text-align: center;
             margin: 1rem 0;
+            flex-shrink: 0;
         }
 
         nav a {
@@ -59,12 +63,17 @@
         /* Main Content */
         main {
             padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         section {
             margin-bottom: 2rem;
+            max-width: 800px;
         }
 
         section h2 {
@@ -109,9 +118,7 @@
             text-align: center;
             padding: 1rem 0;
             border-top: 2px solid #4CAF50;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            flex-shrink: 0;
         }
 
         footer p {
